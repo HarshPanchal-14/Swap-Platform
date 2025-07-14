@@ -1,0 +1,61 @@
+{
+  "name": "skill-swap-platform",
+  "version": "1.0.0",
+  "description": "A comprehensive Skill Swap Platform with PostgreSQL backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "lint:fix": "eslint src/**/*.{js,jsx} --fix",
+    "format": "prettier --write src/**/*.{js,jsx,css,md}",
+    "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
+    "db:test": "node test-database.js",
+    "db:setup": "psql -h localhost -p 5432 -U postgres -d skill_swap_platform -f database-schema.sql",
+    "db:reset": "psql -h localhost -p 5432 -U postgres -c 'DROP DATABASE IF EXISTS skill_swap_platform; CREATE DATABASE skill_swap_platform;' && npm run db:setup"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "date-fns": "^2.30.0",
+    "pg": "^8.16.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.8.1",
+    "react-scripts": "5.0.1",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.0",
+    "webpack-bundle-analyzer": "^4.9.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "skill-swap",
+    "react",
+    "postgresql",
+    "platform",
+    "learning",
+    "exchange"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
